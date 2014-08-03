@@ -3,12 +3,8 @@ layout: page
 title: About
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself. 
+I love trying to solve hard problems by leveraging technology. In the past, I have worked at multiple SMEs & also started 2 firms (Gharpay & Clinknow). Currently, I spend my days as a Principal Engineer at Ezetap and the evenings dreaming of all the little things I can do with technology.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[me@arpitmohan.com](mailto:me@arpitmohan.com)
