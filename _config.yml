@@ -23,7 +23,7 @@ footer-links:
   flickr: 
   github: mohanarpit
   instagram: 
-  linkedin: mohanarpit
+  linkedin: arpitmohan
   pinterest: 
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: mohanarpit
@@ -32,11 +32,11 @@ footer-links:
 disqus: 
 
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics: 
+google_analytics: UA-45468231-1
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url: 
+url: http://arpitmohan.com
 
 # If you're hosting your site at a Project repository on GitHub pages 
 # (http://yourusername.github.io/repository-name)
