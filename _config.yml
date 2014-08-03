@@ -3,13 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-name: Your Name
+name: Arpit Mohan
 
 # Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
+description: Systems Architect and lover of code. 
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
+avatar: https://avatars3.githubusercontent.com/u/458946?v=1&s=460
 
 #
 # Flags below are optional
@@ -21,12 +21,12 @@ footer-links:
   email: 
   facebook: 
   flickr: 
-  github: barryclark/jekyll-now
+  github: mohanarpit/mohanarpit.github.io
   instagram: 
   linkedin: 
   pinterest: 
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: jekyllrb
+  twitter: mohanarpit
 
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: 
