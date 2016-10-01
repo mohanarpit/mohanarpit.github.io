@@ -83,6 +83,7 @@
 	<li>In order to conserve space, only the diff of the data is stored and transmitted. The diff is then patched on the previous changes to re-create the complete file.</li>
 	<li>Allows doing &amp; un-doing changes without fear.</li>
 	<li>At all points you can recover any &amp; all previous changes.</li>
+	<li>Data is stored as a Linked List so you can traverse across nodes of the list easily</li>
 </ul>
 </div></div></section><section data-id="743368a8f940299cdf643ce565d0cd6c"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="e5f8af5fc2a228ccea1ddd92e2cb2b17"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" dir="ui" style="z-index: 11;"><h1>Install Git</h1></div></div>
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 86px; top: 70px; height: auto;" data-block-id="77cab590d46d202ec489045739e456f9"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" dir="ui" style="z-index: 12;">
@@ -153,16 +154,134 @@ $ git config user.email "companymail@company.com"</code></pre></div></div></sect
 <div class="sl-block" data-block-type="code" data-block-id="bf3c741aa31ad30ee22d3f6d9188c62a" style="min-width: 30px; min-height: 30px; width: 880px; height: 58px; left: 80px; top: 510px;"><div class="sl-block-content" style="z-index: 17;"><pre class="vim"><code>$ git config --list</code></pre></div></div>
 <div class="sl-block" data-block-type="text" data-block-id="c6dd5fbb17fff9df150a56aab10752cc" style="height: auto; min-width: 30px; min-height: 30px; width: 880px; left: 80px; top: 617px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;">
 <p style="text-align: left;">All the changes are stored in ~/.gitconfig file. Go check them out.</p>
+</div></div></section><section data-id="c9b32e9d967637cb556cc2cb8ce14644"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="7b9a8191aecc5e5d6cf9ed2823694d68"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" dir="ui" style="z-index: 11;">
+<h1>Initialize Git Repo</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 78px; height: auto;" data-block-id="d5f5fb8ebe3bf2cee96c00c573dad8b7"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Subtitle" dir="ui" style="z-index: 12;">
+<h2 style="text-align:left"><span style="font-size:0.7em">Let's create a new repo</span></h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 880px; height: 144px; left: 80px; top: 158px;" data-block-id="e5cf1529d2baa5180e8628942b6fec87"><div class="sl-block-content" style="z-index: 13;"><pre><code>$ mkdir ~/projects/test-project
+
+$ cd ~/projects/test-project
+
+$ git init
+Initialized empty Git repository in ~/projects/test-project/.git/
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 880px; left: 80px; top: 342px;" data-block-id="2134f390d437775ec9d2b446989df406"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 18;">
+<p style="text-align:left">The command "<em>git init</em>" creates a <strong>.git/</strong> folder in the folder. This is where all of git's data is stored. If you delete this folder, you'll delete all the history and tracking information.</p>
+
+<p style="text-align:left"> </p>
+
+<p style="text-align:left">All configurations pertinent to this repo is stored in <strong>.git/config</strong> file. Open it in your favourite editor and check it out.</p>
 </div></div></section><section data-id="d785b3dd7531329c5c2eab12620b5b8a"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="04def3663bd01243cba696683a2d29da"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 10;">
 <h1>Git Terminology</h1>
-</div></div></section>
+</div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="83bd8e1c67cfc69f1f9728d9d655c5ad" style="min-width: 4px; min-height: 4px; width: 230px; height: 52px; left: 0px; top: 140px;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(166, 28, 0)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 230 52"><rect width="230" height="52" class="shape-element" fill="rgb(166, 28, 0)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="11df91f29d2666eac91bfefbdc0bdbce" style="height: auto; min-width: 30px; min-height: 30px; width: 230px; left: 0px; top: 140px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>Untracked files</p>
+</div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="98a256ffb0258ade71913ebfb9ea5b69" style="min-width: 4px; min-height: 4px; width: 45px; height: 88px; left: 80px; top: 194px;"><div class="sl-block-content" data-shape-type="arrow-down" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 13;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 45 88"><polygon points="22.5,88 45,44 31.499999999999996,44 31.499999999999996,0 13.5,0 13.5,44 0,44 22.5,88" class="shape-element" fill="#000000"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 230px; height: 52px; left: 0px; top: 280px;" data-block-id="65f8270ed818639a6b0a1ab12d07cfb7"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(166, 28, 0)" data-shape-stretch="true" style="z-index: 14;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 230 52"><rect width="230" height="52" class="shape-element" fill="rgb(166, 28, 0)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 230px; height: 52px; left: 0px; top: 420px;" data-block-id="b3e6048b811416f19352c3f4d3809f05"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(166, 28, 0)" data-shape-stretch="true" style="z-index: 15;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 230 52"><rect width="230" height="52" class="shape-element" fill="rgb(166, 28, 0)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 45px; height: 88px; left: 80px; top: 332px;" data-block-id="a81d9d8af32fbc3896fa851fa6228b13"><div class="sl-block-content" data-shape-type="arrow-down" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 16;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 45 88"><polygon points="22.5,88 45,44 31.499999999999996,44 31.499999999999996,0 13.5,0 13.5,44 0,44 22.5,88" class="shape-element" fill="#000000"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 230px; height: 52px; left: 0px; top: 560px;" data-block-id="f89508e5130b02e6c5dc528c73f47c27"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(166, 28, 0)" data-shape-stretch="true" style="z-index: 17;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 230 52"><rect width="230" height="52" class="shape-element" fill="rgb(166, 28, 0)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 45px; height: 88px; left: 80px; top: 474px;" data-block-id="079ceee21c45d27542aa9a56cbd65efc"><div class="sl-block-content" data-shape-type="arrow-down" data-shape-fill-color="#000000" data-shape-stretch="true" style="z-index: 18;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 45 88"><polygon points="22.5,88 45,44 31.499999999999996,44 31.499999999999996,0 13.5,0 13.5,44 0,44 22.5,88" class="shape-element" fill="#000000"></polygon></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 230px; left: 0px; top: 282px;" data-block-id="2ace406ae844bdcf295214c0ce435808"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 19;">
+<p>Staging Area</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 230px; left: 0px; top: 420px;" data-block-id="6fde8d74298382d16f54193f95c0f05c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 20;">
+<p>Local Git tree</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 230px; left: 0px; top: 560px;" data-block-id="14e84855aaa54484f1ca0681f48c2522"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 21;" dir="ui">
+<p>Remote Git tree</p>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="8a536bbbd45e40bc7355b3a9ebef2f6c" style="height: auto; min-width: 30px; min-height: 30px; width: 720px; left: 240px; top: 132px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 22;">
+<p style="text-align: left;">Every file/change starts without git knowing about it.</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 720px; left: 240px; top: 263px;" data-block-id="be6e4c102a38afa73e7546ee07fb91e4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 24;">
+<p style="text-align: left;">If you want to commit a change, you would put it in this staging area to tell Git that it should be interested in this.</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 714px; left: 240px; top: 404px;" data-block-id="fe993752b5b3b179555232325d559778"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 25;">
+<p style="text-align: left;">When you commit the change, only the local linked list is modified. This design allows for very powerful semantics (covered later)</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 720px; left: 240px; top: 560px;" data-block-id="f93a6a2f5cc7f6cc5e826864b8d76ab0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 26;">
+<p style="text-align:left">Finally, the change is pushed to the remote repository. It is now available to other devs on the team.</p>
+</div></div></section><section data-id="75dc313679b8abfee0898caa02befd70"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="fabf1f9880046766f438230b82957890"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Untracked files</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" data-block-id="9d84de052a1bd1ba5b46300af70a30bb" style="height: auto; min-width: 30px; min-height: 30px; width: 952px; left: 8px; top: 140px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p style="text-align:left">All files start out being untracked. These are new files that are created in the folder.</p>
+
+<p style="text-align:left">Let's create a new file in our folder</p>
+
+<p style="text-align:left"> </p>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="c6815737eb67cfe4ff3f994655198a7b" style="min-width: 30px; min-height: 30px; width: 966px; height: 300px; left: 0px; top: 280px;"><div class="sl-block-content" style="z-index: 13;"><pre class="vim"><code>$ echo "Initial content" &gt; README.md
+
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="e9493f652ddfc3d94193b6335801a7fc" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 0px; top: 611px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p style="text-align: left;">Git knows what it doesn't know :D</p>
+</div></div></section><section data-id="6ac91d56851077d895095d5f9746db68"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="3d21698cb20faa81ff6401370b965d62"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Staging Area</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 952px; left: 8px; top: 140px;" data-block-id="e13b98cd4ec9ae205978ffbf01cd4333"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p style="text-align:left">The staging area is a buffer area where you can add files/changes to files before actually committing them. This feature allows you to add files one-by-one and inspect the changes before actually committing it.</p>
+
+<p style="text-align:left"> </p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 966px; height: 259px; left: 0px; top: 301px;" data-block-id="4e3de9875a5c04d6e07fc149b526d688"><div class="sl-block-content" style="z-index: 13;"><pre class="vim"><code>$ git add README.md
+
+$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+
+	new file:   README.md</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 960px; left: 0px; top: 611px;" data-block-id="1f4055ba4403e38cb59cdccda67267fa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p style="text-align:left">Git now knows that these changes will be committed going forward.</p>
+</div></div></section><section data-id="95d03e2082a50f7598d6439c77363454"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="9ac42c88cc6cc5f6c153284db486ba29"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Local Git Tree</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 952px; left: 8px; top: 140px;" data-block-id="0b58bee0536310ab934b0b12add83cd9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p style="text-align:left">Git tries to keep changes locally unless specifically asked to share with everyone. When we commit a file, it's only changed in the local git tree.</p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 966px; height: 181px; left: 0px; top: 301px;" data-block-id="9c9ebfc85ac3aaf566fdca012e3078e3"><div class="sl-block-content" style="z-index: 13;"><pre class="vim"><code>$ git commit -m "Initial commit"
+[master (root-commit) 29c5223] Initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+$ git status
+On branch master
+nothing to commit, working directory clean</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 960px; left: 0px; top: 490px;" data-block-id="2aada9b5ac850d1b90ccd6e18eda06d5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<p style="text-align:left">The flag <strong>-m</strong> is followed by the commit message. This should be populated by the reason for the change. Other devs will see this commit message to understand why this change was made.</p>
+</div></div></section><section data-id="a817d86741869fe6dbbf10a646497f34"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 0px; height: auto;" data-block-id="ea29816518291544bc6827330602b242"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h1>Remote Git Tree</h1>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 952px; left: 8px; top: 140px;" data-block-id="831625f14c96163631d15fe6fc2c78e4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p style="text-align:left">If you haven't already, head to <a href="http://github.com" target="_blank">Github</a> and create a project there. We'll push our changes to the world!</p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 966px; height: 77px; left: 0px; top: 239px;" data-block-id="4d4a676bd362bbaa870e79241e47006b"><div class="sl-block-content" style="z-index: 13;"><pre class="vim"><code>$ git push origin master</code></pre></div></div></section>
 			</div>
 		</div>
 
 
 		
 <script>
-	var SLConfig = {"current_user":{"id":165591,"username":"arpitmohan","name":"Arpit Mohan","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-MEBpr5Lfoy8/AAAAAAAAAAI/AAAAAAAAAaI/Gya4n8LAE_w/photo.jpg","pro":false,"team_id":null,"settings":{"id":17896,"present_controls":true,"present_upsizing":true,"present_notes":true,"editor_grid":true,"editor_snap":true,"developer_mode":false,"speaker_layout":null},"email":"mohanarpit@gmail.com","notify_on_receipt":true,"billing_address":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":1},"deck":{"id":814878,"slug":"deck","title":"git","description":"","visibility":"all","published_at":"2016-10-01T11:21:30.464Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/1e0e6d5280c84b50a627c640f53cf8ed/thumb.jpg","view_count":1,"user":{"id":165591,"username":"arpitmohan","name":"Arpit Mohan","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-MEBpr5Lfoy8/AAAAAAAAAAI/AAAAAAAAAaI/Gya4n8LAE_w/photo.jpg","pro":false,"team_id":null,"settings":{"id":17896,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"blue-yellow","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":false,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1475330199923,"font_typekit":null,"font_google":null,"access_token":"RAByjboz4wcV6PqM9qwiXovXhpQr","notes":{}}};
+	var SLConfig = {"current_user":{"id":165591,"username":"arpitmohan","name":"Arpit Mohan","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-MEBpr5Lfoy8/AAAAAAAAAAI/AAAAAAAAAaI/Gya4n8LAE_w/photo.jpg","pro":false,"team_id":null,"settings":{"id":17896,"present_controls":true,"present_upsizing":true,"present_notes":true,"editor_grid":true,"editor_snap":true,"developer_mode":false,"speaker_layout":null},"email":"mohanarpit@gmail.com","notify_on_receipt":true,"billing_address":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":1},"deck":{"id":814878,"slug":"deck","title":"git","description":"","visibility":"all","published_at":"2016-10-01T11:21:30.464Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/1e0e6d5280c84b50a627c640f53cf8ed/thumb.jpg","view_count":1,"user":{"id":165591,"username":"arpitmohan","name":"Arpit Mohan","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-MEBpr5Lfoy8/AAAAAAAAAAI/AAAAAAAAAaI/Gya4n8LAE_w/photo.jpg","pro":false,"team_id":null,"settings":{"id":17896,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"blue-yellow","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":false,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1475346278807,"font_typekit":null,"font_google":null,"access_token":"RAByjboz4wcV6PqM9qwiXovXhpQr","notes":{}}};
 </script>
 
 		<script>
