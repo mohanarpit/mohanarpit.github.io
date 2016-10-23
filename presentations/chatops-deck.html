@@ -96,6 +96,34 @@
     robot.brain.set 'helloResponses', helloResponses+1</code></pre></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 145px; top: 171px;" data-block-id="c64d1c5b456a7640ef4d35a9bf93570e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
 <p>Sample Code for the hello command</p>
+</div></div></section><section data-id="ef4fc0d13e8c01eda2bda3db54e64f2b"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 1px; height: auto;" data-block-id="4a75bb07a27c3da87587fd69e25e9689"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Show me the code</h2>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 420px; left: 0px; top: 280px;" data-block-id="b26c8bbd2b7347ef06a5d821beb56454"><div class="sl-block-content" style="z-index: 12;"><pre><code>  robot.hear /gitlab build (.*)$/i, (res) -&gt;
+    res.send "Building ..."
+    project_name = res.match[1]
+    gitlab_ci_token = process.env.GITLAB_CI_TOKEN
+    res.send "Will build #{project_name} using key #{gitlab_ci_token}"
+
+    res.http("https://code.usefilter.com/api/v3/projects?private_token=#{gitlab_ci_token}")
+    .header('Accept', 'application/json')
+    .get() (err, http_res, body) -&gt;
+      if err
+        res.send 'Sorry. Unable to fetch the list of projects from Gitlab'
+        return
+
+      for project in JSON.parse body
+        if project.name.toLowerCase()  is project_name.toLowerCase()
+            project_found = true
+            project_id = project.id
+            res.send "Found project with ID: #{project.id}"
+
+
+    
+
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 145px; top: 171px;" data-block-id="49725fe1287622a5b9347c168988d9d0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<p>Sample code for the build command</p>
 </div></div></section><section data-id="10ce2c977b3dc6f554d7eefcd754be63"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 1px; height: auto;" data-block-id="8ea27c994744aa8844e68d00c64a555a"><div class="sl-block-content" data-placeholder-tag="h2" data-placeholder-text="Title Text">
 <h2>Other Alternatives</h2>
 </div></div>
@@ -136,7 +164,7 @@
 
 		
 <script>
-	var SLConfig = {"current_user":{"id":165591,"username":"arpitmohan","name":"Arpit Mohan","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-MEBpr5Lfoy8/AAAAAAAAAAI/AAAAAAAAAaI/Gya4n8LAE_w/photo.jpg","pro":false,"team_id":null,"settings":{"id":17896,"present_controls":true,"present_upsizing":true,"present_notes":true,"editor_grid":true,"editor_snap":true,"developer_mode":true,"speaker_layout":null},"email":"mohanarpit@gmail.com","notify_on_receipt":true,"billing_address":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":1},"deck":{"id":834495,"slug":"deck-2","title":"deck","description":"","visibility":"all","published_at":"2016-10-21T05:25:49.601Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/4f71d54537d6eb502c80cc051eea062e/thumb.jpg","view_count":0,"user":{"id":165591,"username":"arpitmohan","name":"Arpit Mohan","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-MEBpr5Lfoy8/AAAAAAAAAAI/AAAAAAAAAaI/Gya4n8LAE_w/photo.jpg","pro":false,"team_id":null,"settings":{"id":17896,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"sea-yellow","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":null,"slide_number":null,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1477033870797,"font_typekit":null,"font_google":null,"access_token":"UEVeieRqyZ7C9EYb71af55fRKZYr","notes":{}}};
+	var SLConfig = {"current_user":{"id":165591,"username":"arpitmohan","name":"Arpit Mohan","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-MEBpr5Lfoy8/AAAAAAAAAAI/AAAAAAAAAaI/Gya4n8LAE_w/photo.jpg","pro":false,"team_id":null,"settings":{"id":17896,"present_controls":true,"present_upsizing":true,"present_notes":true,"editor_grid":true,"editor_snap":true,"developer_mode":true,"speaker_layout":null},"email":"mohanarpit@gmail.com","notify_on_receipt":true,"billing_address":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":1},"deck":{"id":834495,"slug":"deck-2","title":"deck","description":"","visibility":"all","published_at":"2016-10-21T05:25:49.601Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/4f71d54537d6eb502c80cc051eea062e/thumb.jpg","view_count":0,"user":{"id":165591,"username":"arpitmohan","name":"Arpit Mohan","description":null,"thumbnail_url":"https://lh6.googleusercontent.com/-MEBpr5Lfoy8/AAAAAAAAAAI/AAAAAAAAAaI/Gya4n8LAE_w/photo.jpg","pro":false,"team_id":null,"settings":{"id":17896,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"sea-yellow","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":null,"slide_number":null,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1477039352614,"font_typekit":null,"font_google":null,"access_token":"UEVeieRqyZ7C9EYb71af55fRKZYr","notes":{}}};
 </script>
 
 		<script>

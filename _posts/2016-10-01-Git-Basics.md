@@ -14,4 +14,4 @@ For their benefit, I ended up creating a short presentation on Git and how to us
 it within the team. I'm sharing that here in the hope that some poor soul out there
 will benefit from it.
 
-[Git Presentation](../git-deck.html)
+[Git Presentation](../presentations/git-deck.html)
