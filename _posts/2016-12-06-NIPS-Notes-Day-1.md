@@ -82,8 +82,6 @@ and then apply standard face recognition algorithms, the solution works much bet
 
 A flow chart that should be followed while developing solutions is:
 
-{% mermaid %}
-graph mlflow;
   A("If training error is high?")-- Y -->B("Try Bigger model, train longer, new model. (Bias)");
   A-- N -->C("Train-Dev error high?");
   C-- Y -->D("More data, regularization , new model (Variance)");
@@ -92,7 +90,6 @@ graph mlflow;
   E-- N -->G("Test set error high?");
   E-- Y -->H("More dev data (Overfitted dev data)");
   E-- N -->I("Done!");
-{% endmermaid %}
 
 For industrial applications, get the product manager to help the engineering team to
 * Prioritize certain features
