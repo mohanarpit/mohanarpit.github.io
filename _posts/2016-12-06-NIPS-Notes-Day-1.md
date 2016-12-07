@@ -144,3 +144,5 @@ Yann started out with the obstacles faced by AI today:
 He touched on various topics around Entity Recurrent Neural Networks, Unsupervised Learning & Adversarial Training
 
 His complete slides can be found [here](https://drive.google.com/file/d/0BxKBnD5y2M8NREZod0tVdW5FLTQ/view)
+
+If you do find these notes interesting or find a mistake, do leave a comment or ping me on [twitter](https://twitter.com/mohanarpit)
