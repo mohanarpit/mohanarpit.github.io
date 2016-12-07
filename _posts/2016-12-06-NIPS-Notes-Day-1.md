@@ -81,15 +81,7 @@ and then apply standard face recognition algorithms, the solution works much bet
 * Difference b/w dev error & training error is **Variance**
 
 A flow chart that should be followed while developing solutions is:
-
-  A("If training error is high?")-- Y -->B("Try Bigger model, train longer, new model. (Bias)");
-  A-- N -->C("Train-Dev error high?");
-  C-- Y -->D("More data, regularization , new model (Variance)");
-  C-- N -->E("Dev error high?");
-  E-- Y -->F("Data synthesis, make data more similar (Domain adaptation - less common), New model architecture (Data mis-match problem)");
-  E-- N -->G("Test set error high?");
-  E-- Y -->H("More dev data (Overfitted dev data)");
-  E-- N -->I("Done!");
+![ML Flow Process](../images/ml-process.jpg)
 
 For industrial applications, get the product manager to help the engineering team to
 * Prioritize certain features
