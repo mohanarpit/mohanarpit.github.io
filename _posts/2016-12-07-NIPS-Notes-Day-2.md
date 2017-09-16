@@ -24,11 +24,13 @@ Unlike supervised learning, for clustering, the goal is not very clear. This is 
 there can be various ways to cluster data.
 
 **Challenges**:
+
 * We don’t have enough domain knowledge. This problem is called under-specificity.
 * High computational complexity. Clustering requires a lot of computation power.
 * Optimizing k-means/k-median is NP Hard.
 
 Some of the ways to acquire domain knowledge and solve the under-specificity problem is:
+
 * Trial & error.
 * Offline models such as
   * Constrained Clustering
