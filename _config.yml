@@ -65,6 +65,7 @@ plugins:
   - jemoji # Emoji please!
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-mermaid
+  - jekyll-feed
 
 # Exclude these files from your production _site
 exclude:
