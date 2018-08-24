@@ -73,7 +73,9 @@ To quit and return to the terminal, use the normal `vi` command
 <ESC> :q
 `
 
+
 ### entr
+
 I recently came across this command and although it hasn't made it to my most frequently used commands, I think it's pretty useful. It would be a crime to compile such a list and not mention `entr`
 
 This command allows users to execute an arbitrary script whenever a file changes. It's similar to `watchr`, `guard` & `nodemon`. Since `entr` is written in C, it's faster and more responsive on larger directories.
