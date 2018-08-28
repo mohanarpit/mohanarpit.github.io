@@ -70,9 +70,10 @@ $ less +F /var/log/insanely-large-log-file.log
 To quit and return to the terminal, use the normal `vi` command
 
 `
-<ESC> :q
+  <ESC> :q
 `
 
+Check the man page for more modifiers.
 
 ### entr
 
