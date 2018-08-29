@@ -54,7 +54,6 @@ loading the file partially into memory, thereby making it a sleek
 alternative to `vi`
 
 Example:
-
 ```
 $ less /var/log/insanely-large-log-file.log
 ```
@@ -70,7 +69,7 @@ $ less +F /var/log/insanely-large-log-file.log
 To quit and return to the terminal, use the normal `vi` command
 
 ```
-  (ESC) :q
+<ESC> :q
 ```
 
 ### entr
