@@ -14,5 +14,31 @@ comments: true
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
 
+  {% if page.content contains "code" %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+  <script>
+    var allCodeBlocksElements = $( "code" );
+
+    allCodeBlocksElements.each(function(i) {
+    // add different id for each code block
+
+    // target
+    var currentId = "codeblock" + (i + 1);
+    $(this).attr('id', currentId);
+
+    var parentTag = $(this).parent();
+    if(parentTag.is("pre")) {
+      //trigger
+      var clipButton = '<span style="float:right"><button class="btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button></span>';
+         $(this).prepend(clipButton);
+      new ClipboardJS('.btn');
+    }
+    });
+
+  </script>
+  {% endif %}
+
   {% include disqus.html disqus_identifier=page.disqus_identifier %}
 </article>

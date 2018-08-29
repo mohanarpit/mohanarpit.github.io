@@ -2,7 +2,9 @@
 layout: post
 title: Linux Tips And Tricks
 published: true
+tags: #linux, #bash, #tips
 ---
+
 
 It seems that publishing a post of Linux tips & tricks is a rite of passage that all engineers must go through. More importantly, it's a bookmark for my future self to find these eclectic mix of commands easily with minimal googling.
 
@@ -13,7 +15,7 @@ This command is very helpful while searching for needles in a haystack. It also 
 
 The general syntax of the command is:
 
-```
+```bash
 $ find <starting directory> \
   -type <type of file/directory> \
   -name "<Regex of the file/dir name>" \
@@ -22,13 +24,12 @@ $ find <starting directory> \
 
 Basic example looking for java files:
 
-```
+```bash
 $ find ~/projects -type f -name "*.java"
 ```
 
 Example looking for directories called main
-
-```
+```bash
 $ find ~/projects -type d -name "main"
 ```
 
@@ -36,13 +37,13 @@ We can also recursively execute a command on the matching files. This exposes th
 
 Example: Search all java files for the Main function. The output of this command will only be the matched strings.
 
-```
+```bash
 $ find ~/projects -type f -name "*.java" -exec grep -i "Main" '{}' \;
 ```
 
 Alternatively, if you wish to output the name of the matching file along with the matched string:
 
-```
+```bash
 $ find ~/projects -type f -name "*.java" -exec grep -i "Main" '{}' +
 ```
 
@@ -57,7 +58,7 @@ loading the file partially into memory, thereby making it a sleek
 alternative to `vi`
 
 Example:
-```
+```bash
 $ less /var/log/insanely-large-log-file.log
 ```
 
@@ -65,13 +66,13 @@ Once inside, you can use `G` to go to the end of the file or use `F` to tail the
 
 Alternatively, you can open & tail the file directly using
 
-```
+```bash
 $ less +F /var/log/insanely-large-log-file.log
 ```
 
 To quit and return to the terminal, use the normal `vi` command
 
-```
+```vim
 <ESC> :q
 ```
 
@@ -83,19 +84,17 @@ This command allows users to execute an arbitrary script whenever a file changes
 
 Usecases can range from running test cases whenever your source files change
 
-```
+```bash
 $ ls *.c | entr 'make && make test'
 ```
-
 or reloading the browser whenever an HTML file changes.
-
-```
+```bash
 $ ls *.css *.html | entr reload-browser Firefox
 ```
 
 You can also restart server processes using the `-r` modifier
 
-```
+```bash
 $ ls *.rb | entr -r ruby main.rb
 ```
 
@@ -105,13 +104,13 @@ Check out more details [here](http://www.entrproject.org/).
 If you are looking at your machine's performance in any way apart from
 `htop`, you're doing it wrong. It's what `top` should have been all along. Although it's not built-in, you can easily install it via:
 
-```
+```bash
 $ apt install htop
 ```
 
 or
 
-```
+```bash
 $ brew install htop-osx.
 ```
 
@@ -124,7 +123,7 @@ Example:
 
 This example extracts the field 'foo' from the input JSON.
 
-```
+```bash
 $ jq '.foo' {"foo": 42, "bar": "less interesting data"}
 ```
 
@@ -134,11 +133,11 @@ $ jq '.foo' {"foo": 42, "bar": "less interesting data"}
 
 This example extracts the 0th element of the JSON array.
 
-```
+```bash
 $ jq '.[0]' [{"name":"JSON", "good":true}, {"name":"XML", "good":false}]
 ```
 
-```
+```bash
 => {"name":"JSON", "good":true}
 ```
 
@@ -149,7 +148,7 @@ The following vim commands aren't for newbies. It's for more advanced users.
 
 How often do you open a file in vim to edit it and realize you should have opened it as *root*? You can use the following command to save your changes without exiting vim.
 
-```
+```vim
 <ESC> :w !sudo tee %
 ```
 
