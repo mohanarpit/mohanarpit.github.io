@@ -55,25 +55,23 @@ alternative to `vi`
 
 Example:
 
-`
+```
 $ less /var/log/insanely-large-log-file.log
-`
+```
 
 Once inside, you can use `G` to go to the end of the file or use `F` to tail the file.
 
 Alternatively, you can open & tail the file directly using
 
-`
+```
 $ less +F /var/log/insanely-large-log-file.log
-`
+```
 
 To quit and return to the terminal, use the normal `vi` command
 
-`
-  <ESC> :q
-`
-
-Check the man page for more modifiers.
+```
+  (ESC) :q
+```
 
 ### entr
 
