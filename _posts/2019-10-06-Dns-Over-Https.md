@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DNS Over Https
+title: DNS Over Https (Doh 🍩!)
 published: true
 tags: #security, #dns, #https
 ---
@@ -36,7 +36,7 @@ Does it mean we are finally safe on the web? Absolutely NOT! You're never safe o
 
 If you'd like to understand the issue more deeply, please read [Mozilla's fantastic post](https://hacks.mozilla.org/2018/05/a-cartoon-intro-to-dns-over-https/).
 
-## How to enable DNS Over HTTPS (Doh) :doughnut: 
+## How to enable DNS Over HTTPS (DoH) in Google Chrome
 
 While it's super simple to do this in Firefox (read [here](https://support.mozilla.org/en-US/kb/firefox-dns-over-https) for instructions), Chrome still hasn't made it very easy yet. This tutorial focuses on enabled DoH on Chrome on MacOSX.
 
@@ -79,7 +79,6 @@ While it's super simple to do this in Firefox (read [here](https://support.mozil
 
 6. You need to reload the launch services in order for these changes to take effect. You can do this by running the following command.
 
-
         /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister \
         -f /Applications/Google\ Chrome.app
 
@@ -89,3 +88,5 @@ While it's super simple to do this in Firefox (read [here](https://support.mozil
 see the page claiming DNS Over HTTPS is enabled. A sample screenshot is attached below:
 
     ![dns-over-https-screenshot](../images/doh.png)
+
+Enjoy your newfound security!
